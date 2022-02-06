@@ -55,13 +55,13 @@ partial class TestClass : BaseTestClass
         textArea = DynJVM.TextArea.@new();
         buttonWrite = DynJVM.Button.@new("Write to console");
         buttonWrite.setActionCommand("writeToConsole");
-        buttonWrite.addActionListener(listener.DynListener);
+        buttonWrite.addActionListener(listener.Instance);
         var buttonTextAreaWrite = DynJVM.Button.@new("Write TextArea to console");
         buttonTextAreaWrite.setActionCommand("writeTextAreaToConsole");
-        buttonTextAreaWrite.addActionListener(listener.DynListener);
+        buttonTextAreaWrite.addActionListener(listener.Instance);
         var buttonClose = DynJVM.Button.@new("Close application");
         buttonClose.setActionCommand("closeApplication");
-        buttonClose.addActionListener(listener.DynListener);
+        buttonClose.addActionListener(listener.Instance);
         var panel = DynJVM.Panel.@new();
         var layout = DynJVM.GridLayout.@new(2, 2);
         panel.setLayout(layout);
@@ -78,8 +78,8 @@ partial class TestClass : BaseTestClass
             System.Threading.Thread.Sleep(10);
         }
 
-        buttonWrite.removeActionListener(listener.DynListener);
-        buttonClose.removeActionListener(listener.DynListener);
+        buttonWrite.removeActionListener(listener.Instance);
+        buttonClose.removeActionListener(listener.Instance);
 
         ReleaseListener(listener);
     }

@@ -29,7 +29,7 @@ namespace WpfWinFormsJavaApplication
             panel.add(TextArea);
             var button = DynJVM.java.awt.Button.@new("Send TextArea text to Host Application");
             button.setActionCommand("sendData");
-            button.addActionListener(Listener.DynListener);
+            button.addActionListener(Listener.Instance);
             panel.add(button);
 #if WINFORMS
             Container = GetJCGraphicContainer(panel, false);
